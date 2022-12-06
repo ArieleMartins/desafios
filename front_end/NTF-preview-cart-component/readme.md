@@ -1,7 +1,7 @@
-<h1 align="center">PRODUCT PREVIEW CARD COMPONENT </h1>
+<h1 align="center">NTF PREVIEW CARD COMPONENT </h1>
 <p align="center"> Desafio de desenvolver layout proposto pelo <a href="https://www.frontendmentor.io/home" target="_blank">FrontEnd Mentor</a></p>
 
-[prodct_preview_cart_component_frontendmentor.webm](https://user-images.githubusercontent.com/83427685/205969071-86164ab6-86f7-403b-a2db-68a8273f3662.webm)
+![NTF_preview_card_component](https://user-images.githubusercontent.com/83427685/206009554-d92f551f-29dd-46c3-a794-9279253167d9.png)
 
 <h1 align="center">Tecnologias</h1>
 
