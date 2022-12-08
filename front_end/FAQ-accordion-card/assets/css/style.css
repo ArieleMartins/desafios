@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --very-dark-desaturated-blue:hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+    --font-family:'Kumbh Sans', sans-serif;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: var(--soft-violet);
+    background: linear-gradient(180deg, var(--soft-violet) 0%, var(--soft-blue) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 65%;
+    background-color:white;
+    border-radius: 20px;
+    background-image: url(../images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-size:500px;
+    background-position: -85px center; 
+    position: relative;
+    padding:50px 50px;
+}
+
+.container-title-questions{
+    float: right;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    font-family: var(--font-family);
+    height: 450px;
+}
+
+.container-title-questions h1{
+    color: var(--very-dark-desaturated-blue);
+}
+
+.container-questions ul li{
+    overflow-y: hidden;
+    padding: 20px 0px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    transition: height 1s linear;
+}
+.container-questions ul li:not(.active):hover div{
+    color: var(--soft-red);
+}
+.container-questions ul li:nth-child(1){
+    border-top: 1px solid var(--light-grayish-blue);
+    border-bottom: 1px solid  var(--light-grayish-blue);
+}
+.container-questions ul li + li{
+    border-bottom: 1px solid  var(--light-grayish-blue);
+}
+.container-questions ul li div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--very-dark-grayish-blue);
+}
+
+.container-questions ul li div img{
+    width: 14px;
+    height: 10px;
+}
+.container-questions{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.container-questions ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.answer{
+    opacity: 0;
+    height: 0px;
+    color: var(--dark-grayish-blue);
+}
+
+.container-img{
+    position: absolute;
+    left: -130px;
+    top:230px;
+}
+
+
+.active{
+    animation: animation 1s linear forwards;
+}
+.active div{
+    font-weight: 700;
+}
+.active .answer{
+   opacity: 1;
+   height: 100%;
+}
+
+@keyframes animation {
+    0%{
+        height: 30px;
+    }
+    100%{
+        height: 135px;
+    }
+}
+
+.container-img-mobile{
+    display: none;
+}
+
+@media(max-width: 1300px){
+    body{
+        padding-top: 70px;
+    }
+    .container{
+        background-image: none;
+        background-position: 0;
+        background-repeat:inherit;
+        background-size: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container-title-questions{
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        font-family: var(--font-family);
+    }
+
+    .container-img-mobile{
+        display: block;
+        width: 100%;
+        max-width: 310px;
+        position: absolute;
+        top: 5px;
+        z-index: 1;
+    }
+    .container-img{
+        display: none;
+    }
+}
+
+@media(max-width:600px){
+    body{
+        padding-top: 130px;
+        
+    }
+    .container{
+        width: 90%;
+        padding-top: 100px;
+        padding:100px 20px 50px 20px;
+    }
+    .container-title-questions h1{
+        text-align: center;
+    }
+    .container-questions ul .active span{
+        overflow-x:auto;
+    }
+}
+
+.container-questions ul .active span::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px;
+}
+.container-questions ul .active span::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,0.5);
+}
