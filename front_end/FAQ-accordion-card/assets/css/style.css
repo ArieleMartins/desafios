@@ -53,17 +53,12 @@ body{
     color: var(--very-dark-desaturated-blue);
 }
 
-.container-questions ul li{
-    overflow-y: hidden;
-    padding: 20px 0px;
+.container-questions ul li details{
     height: 60px;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    
 }
-.container-questions ul li:not(.active):hover div{
+
+.container-questions ul li:not(.active):hover summary{
     color: var(--soft-red);
 }
 .container-questions ul li:nth-child(1){
@@ -73,14 +68,15 @@ body{
 .container-questions ul li + li{
     border-bottom: 1px solid  var(--light-grayish-blue);
 }
-.container-questions ul li div{
+.container-questions ul li summary{
     display: flex;
+    height: 60px;
     justify-content: space-between;
     align-items: center;
     color: var(--very-dark-grayish-blue);
 }
 
-.container-questions ul li div img{
+.container-questions ul li summary img{
     width: 14px;
     height: 10px;
 }
@@ -97,30 +93,34 @@ body{
 }
 
 .answer{
-    opacity: 0;
-    height: 0px;
+    opacity: 0%;
     color: var(--dark-grayish-blue);
 }
 
 .container-img{
     position: absolute;
-    left: -130px;
-    top:230px;
+    left: -100px;
+    top:235px;
 }
 
-.close{
+details{
     animation: animationClose 0.5s ease forwards;
 }
 
-.active{
+details[open]{
     animation: animation 0.5s linear forwards;
 }
-.active div{
+
+details[open] summary{
     font-weight: 700;
 }
-.active .answer{
-   opacity: 1;
-   height: 100%;
+
+details[open] .answer{
+   opacity: 100%;
+}
+
+details[open] img{
+    transform: rotate(-180deg);
 }
 
 @keyframes animation {
@@ -176,6 +176,10 @@ body{
     .container-img{
         display: none;
     }
+    .container-questions ul li details{
+        overflow-y: auto;
+    }
+   
 }
 
 @media(max-width:600px){
@@ -191,15 +195,16 @@ body{
     .container-title-questions h1{
         text-align: center;
     }
-    .container-questions ul .active span{
+    .container-questions ul details[open] .answer{
         overflow-x:auto;
     }
+   
 }
 
-.container-questions ul .active span::-webkit-scrollbar{
+details::-webkit-scrollbar{
     background-color: transparent;
     width: 5px;
 }
-.container-questions ul .active span::-webkit-scrollbar-thumb{
+details::-webkit-scrollbar-thumb{
     background-color: rgba(0,0,0,0.5);
 }

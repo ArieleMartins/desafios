@@ -1,23 +1,21 @@
-const lists = document.querySelectorAll('li')
+const lists = document.querySelectorAll('li details')
 
-window.addEventListener('load', checkEvent(false, ''))
+window.addEventListener('load', addEventList)
 
-function checkEvent(boolean, element){
-    lists.forEach(list =>{
-        if(boolean){
-            if(list.classList.contains('active')){
-                list.classList.remove('active')
-                list.classList.add('close')
-            }else if(!list.classList.contains('active') && list.attributes[0].nodeValue == element){
-                list.classList.add('active')
-                list.classList.remove('close')
+function checkEvent(valueAtribute){
+
+   lists.forEach(list =>{
+     if(list.attributes.length > 1 && list.parentElement.attributes[0].nodeValue != valueAtribute){
+            if(list.attributes[1].nodeValue == ""){
+                console.log(list)
+                list.removeAttribute('open')
             }
-        }else{
-            lists.forEach(list =>{
-                list.addEventListener('click', () =>{checkEvent(true, list.attributes[0].nodeValue)})
-            })
         }
+    }) 
+}
+
+function addEventList(){
+    lists.forEach(list =>{
+        list.addEventListener('click', ()=>{checkEvent(list.parentElement.attributes[0].nodeValue)})
     })
-    
-    
 }
