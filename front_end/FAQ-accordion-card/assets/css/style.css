@@ -61,7 +61,7 @@ body{
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    transition: height 1s linear;
+    
 }
 .container-questions ul li:not(.active):hover div{
     color: var(--soft-red);
@@ -108,9 +108,12 @@ body{
     top:230px;
 }
 
+.close{
+    animation: animationClose 0.5s ease forwards;
+}
 
 .active{
-    animation: animation 1s linear forwards;
+    animation: animation 0.5s linear forwards;
 }
 .active div{
     font-weight: 700;
@@ -122,13 +125,21 @@ body{
 
 @keyframes animation {
     0%{
-        height: 30px;
+        height: 60px;
     }
     100%{
         height: 135px;
     }
 }
 
+@keyframes animationClose {
+    0%{
+        height: 135px;
+    }
+    100%{
+        height: 60px;
+    }
+}
 .container-img-mobile{
     display: none;
 }
