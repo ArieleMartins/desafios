@@ -7,6 +7,7 @@
 
 - HTML
 - CSS
+- JS
 
 <h1 align="center">DESENVOLVEDORES</h1>
 <div align="center">
