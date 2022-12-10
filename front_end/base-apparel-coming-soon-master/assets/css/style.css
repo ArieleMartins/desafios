@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+    --btn-gradient-color-one-hover:hsl(0, 0%, 100%);
+    --btn-gradient-color-two-hover:hsl(0, 80%, 86%);
+    --btn-gradient-color-one:hsl(0, 100%, 98%);
+    --btn-gradient-color-two:hsl(0, 74%, 74%);
+    --font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    background-image: url(../image/hero-desktop.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+}
+
+main{
+    width: 80%;
+}
+
+header{
+    background-color: white;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    row-gap:70px;
+    width: 43%;
+    background-color: white;
+}
+
+.container h1{
+    font-size: 5.6rem;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: var(--dark-grayish-red);
+}
+
+.container h1 span{
+    color: var(--desaturated-red);
+    font-weight: 300;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.container p{
+    font-size: 19px;
+    color: var(--desaturated-red);
+}
+
+label{
+    display: none;
+}
+
+form{
+    position: relative;
+}
+
+input{
+    width: 90%;
+    border-radius: 30px;
+    height: 50px;
+    padding: 20px 30px 20px 30px;
+    font-family: var(--font-family);
+    border: 1px solid rgb(194, 194, 194);
+    
+    font-size: 1rem;
+}
+
+input::placeholder{
+    color: var(--desaturated-red);
+}
+
+input:focus{
+    outline: 0px;
+    border:2px solid var(--soft-red)
+}
+
+button{
+    position: absolute;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    border-radius: 30px;
+    top: 0;
+    right: 0;
+    border:0;
+    background: var(--btn-gradient-color-one);
+    background: linear-gradient(135deg, var(--btn-gradient-color-one) -90%, var(--btn-gradient-color-two) 120%);
+    cursor: pointer;
+}
+
+button:hover{
+    background: var(--btn-gradient-color-one-hover);
+    background: linear-gradient(135deg, var(--btn-gradient-color-one-hover) -90%, var(--btn-gradient-color-two-hover) 100%);
+    box-shadow: 2px 7px 25px var(--btn-gradient-color-two);
+}
