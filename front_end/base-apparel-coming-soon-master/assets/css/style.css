@@ -181,7 +181,7 @@ button:hover{
         font-size: 16px;
     }
 
-    span{
+    .message-erro{
         font-size: 16px;
     }
 }
