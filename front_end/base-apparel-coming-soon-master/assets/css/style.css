@@ -26,7 +26,6 @@ body{
     background-repeat: no-repeat;
     background-size: contain;
     display: flex;
-    align-items: center;
     justify-content: center;
     font-family: var(--font-family);
 }
@@ -37,6 +36,7 @@ main{
 
 header{
     background-color: white;
+    margin-top: 50px;
 }
 
 .container{
@@ -44,7 +44,6 @@ header{
     flex-direction: column;
     row-gap:70px;
     width: 43%;
-    background-color: white;
 }
 
 .container h1{
@@ -63,6 +62,7 @@ section{
     display: flex;
     flex-direction: column;
     row-gap: 40px;
+    background-color: white;
 }
 
 .container p{
@@ -76,6 +76,9 @@ label{
 
 form{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
 }
 
 input{
@@ -85,7 +88,6 @@ input{
     padding: 20px 30px 20px 30px;
     font-family: var(--font-family);
     border: 1px solid rgb(194, 194, 194);
-    
     font-size: 1rem;
 }
 
@@ -95,7 +97,30 @@ input::placeholder{
 
 input:focus{
     outline: 0px;
+    border:2px solid hsl(0, 100%, 86%)
+}
+
+form.error::before{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url(../image/icon-error.svg);
+    right: 110px;
+    top: 10px;
+    z-index: 1;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: contain;
+}
+
+form.error input:focus{
     border:2px solid var(--soft-red)
+}
+
+.message-erro{
+    color: var(--soft-red);
+    margin-left:30px;
+    display: none;
 }
 
 button{
@@ -110,12 +135,67 @@ button{
     right: 0;
     border:0;
     background: var(--btn-gradient-color-one);
-    background: linear-gradient(135deg, var(--btn-gradient-color-one) -90%, var(--btn-gradient-color-two) 120%);
+    background: linear-gradient(135deg, hsl(0, 80%, 86%) ,  hsl(0, 74%, 74%) );
     cursor: pointer;
 }
 
 button:hover{
     background: var(--btn-gradient-color-one-hover);
-    background: linear-gradient(135deg, var(--btn-gradient-color-one-hover) -90%, var(--btn-gradient-color-two-hover) 100%);
+    background: linear-gradient(135deg,  hsl(0, 0%, 100%) , hsl(0, 74%, 74%));
     box-shadow: 2px 7px 25px var(--btn-gradient-color-two);
+}
+
+@media(max-width: 1190px){
+    html{
+        font-size: 50%;
+    }
+
+    body{
+        background-position: 0px 70px;
+        background-size:100%;
+    }
+
+    .container{
+        width: 100%;
+        row-gap: 400px;
+        
+    }
+
+    header, section{
+        width: 100%;
+        padding: 20px 30px 20px 30px;
+        margin-top: 10px;
+    }
+
+    section{
+        height: 500px;
+        text-align: center;
+    }
+
+    main{
+        width: 100%;
+        
+    }
+    
+    input{
+        font-size: 16px;
+    }
+
+    span{
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 600px){
+    .container{
+        row-gap: 270px;
+    }
+
+    section{
+        height: 100vh;
+    }
+
+    html{
+        font-size: 30%;
+    }
 }
