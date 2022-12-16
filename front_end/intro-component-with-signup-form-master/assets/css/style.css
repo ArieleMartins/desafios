@@ -147,3 +147,32 @@ main{
     text-decoration: none;
     font-weight: 600;
 }
+
+@media(max-width: 941px){
+    body{
+        align-items: inherit;
+        justify-content: inherit;
+    }
+    main{
+        flex-direction: column;
+        row-gap: 20px;
+        width: 90%;
+        margin: auto;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .container-inputs-button{
+        width: 100%;
+        padding: 20px;
+    }
+    .container-title-paragraph{
+        width: 100%;
+    }
+}
+
+@media(max-width:584px){
+    html{
+        font-size: 60%;
+    }
+    
+}
