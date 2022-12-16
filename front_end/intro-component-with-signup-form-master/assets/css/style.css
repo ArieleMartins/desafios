@@ -77,6 +77,7 @@ main{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    position: relative;
 }
 
 .container-input input{
@@ -92,6 +93,18 @@ main{
 .container-input input:focus{
     border: 1px solid black;
     outline: 0;
+}
+
+.container-input.erro::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 10px;
+    right: 20px;
 }
 
 .container-input input::placeholder{

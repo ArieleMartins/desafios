@@ -26,7 +26,7 @@ function checkDatas(){
         }else{
             var checkValueInput = input.value == ''
 
-            checkValueInput ? messageErro[posicion].style.display = 'block' : messageErro[posicion].style.display = 'none'
+            checkValueInput ? showError(true, input, messageErro, posicion) : showError(false, input, messageErro, posicion)
         }
 
         posicion += 1
@@ -37,5 +37,15 @@ function checkDatas(){
 
 function checkEmail(input, messageErro, posicion){
     var checkValueInput = !input.value.includes('.') || !input.value.includes('@')
-    checkValueInput || !checkValueEmail  ? messageErro[posicion].style.display = 'block' : messageErro[posicion].style.display = 'none'
+    checkValueInput || !checkValueEmail  ? showError(true, input, messageErro, posicion) : showError(false, input, messageErro, posicion)
+}
+
+function showError(boolean, input, messageErro, posicion){
+    if(boolean){
+        input.parentElement.classList.add('erro')
+        messageErro[posicion].style.display = 'block'
+    }else{
+        input.parentElement.classList.remove('erro')
+        messageErro[posicion].style.display = 'none'
+    }
 }
