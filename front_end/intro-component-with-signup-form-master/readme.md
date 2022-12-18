@@ -1,35 +1,16 @@
-# Front-end Style Guide
+<h1 align="center">INTRO COMPONENT WITH SIGN-UP FORM </h1>
+<p align="center"> Desafio de desenvolver layout proposto pelo <a href="https://www.frontendmentor.io/home" target="_blank">FrontEnd Mentor</a></p>
 
-## Layout
+![Intro_component_with_sign-up_form](https://user-images.githubusercontent.com/83427685/208314906-ea9272ec-3906-424b-bfa8-698b534cc1b1.png)
 
-The designs were created to the following widths:
+<h1 align="center">Tecnologias</h1>
 
-- Mobile: 375px
-- Desktop: 1440px
+- HTML
+- CSS
+- JS
 
-## Colors
-
-### Primary
-
-- Red: hsl(0, 100%, 74%) 
-- Green: hsl(154, 59%, 51%)
-
-### Accent
-
-- Blue: hsl(248, 32%, 49%)
-
-### Neutral
-
-- Dark Blue: hsl(249, 10%, 26%) 
-- Grayish Blue: hsl(246, 25%, 77%)
-
-## Typography
-
-### Body Copy
-
-- Font size: 16px
-
-### Font
-
-- Family: [Poppins](https://fonts.google.com/specimen/Poppins)
-- Weights: 400, 500, 600, 700
+<h1 align="center">DESENVOLVEDORES</h1>
+<div align="center">
+    <img style="border-radius: 50%" height="200em" src="https://github.com/ArieleMartins.png">
+    <h2 >Ariele Martins</h2>
+</div>

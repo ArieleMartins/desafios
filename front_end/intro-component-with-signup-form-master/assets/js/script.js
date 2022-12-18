@@ -43,9 +43,11 @@ function checkEmail(input, messageErro, posicion){
 function showError(boolean, input, messageErro, posicion){
     if(boolean){
         input.parentElement.classList.add('erro')
+        input.style.border = '1px solid var(--red)'
         messageErro[posicion].style.display = 'block'
     }else{
         input.parentElement.classList.remove('erro')
+        input.style.border = '1px solid black'
         messageErro[posicion].style.display = 'none'
     }
 }
