@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Ping single column coming soon page - Frontend Mentor</title>
 </head>
+
 <body>
     <main>
         <header>
@@ -22,15 +24,16 @@
                 <h1>We are launching <span class="soon">soon!</span></h1>
                 <h2>Subscribe and get notified</h2>
             </div>
-            
-            <div class="container-input-button">
-                <div class="container-input">
-                    <input type="email" aria-label="Email address" placeholder="Your email address...">
-                    <span class="message-erro">Please provide valid email address</span>
+            <form action="">
+                <div class="container-input-button">
+                    <div class="container-input">
+                        <input type="email" aria-label="Email address" placeholder="Your email address..." id="email">
+                        <span class="message-erro">Please provide valid email address</span>
+                    </div>
+
+                    <button id="submit">Notify Me</button>
                 </div>
-                
-                <button>Notify Me</button>
-            </div>
+            </form>
         </section>
         <section class="section-img">
             <figure>
@@ -44,9 +47,12 @@
                 <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-            </ul>  
+            </ul>
         </div>
         <span>&copy; Copyright Ping. All rights reserved</span>
     </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>

@@ -101,7 +101,7 @@ button:hover{
     display: flex;
     flex-direction: column;
     row-gap: 10px;
-    color: red;
+    color: var(--light-red);
     font-style: italic;
     font-size: 13px;
     width: 400px;
@@ -182,6 +182,10 @@ footer{
     }
     html{
         font-size: 53%;
+    }
+    .message-erro{
+        text-align: center;
+        margin-left: 0;
     }
 
 }
