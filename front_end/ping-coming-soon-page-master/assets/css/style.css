@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --blue: hsl(223, 87%, 63%);
+    --blue-hover: hsl(223, 87%, 73%);
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+    --font-family: 'Libre Franklin', sans-serif;
+}
+
+body{
+    width: 100%;
+    padding: 50px;
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+}
+
+main{
+    margin: auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.container-title, .section-title{
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title{    
+    row-gap: 50px;
+}
+
+.container-title{
+    row-gap: 20px;
+}
+
+h1{
+    font-size: 2.7rem;
+    font-weight: 300;
+    color: var(--gray);
+    text-align: center;
+}
+
+.soon{
+    font-weight: 700;
+}
+
+h2, .soon{
+    color: var(--very-dark-blue);
+    font-weight: 300;
+    text-align: center;
+}
+
+
+input{
+    padding: 15px;
+    border-radius: 30px;
+    border: 1px solid var(--pale-blue)
+}
+
+input::placeholder{
+    color: var(--gray);
+}
+
+input:focus{
+    outline: 0;
+    border: 1px solid black;
+}
+
+button{
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    border:none;
+    background-color: var(--blue);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    
+}
+
+button:hover{
+    background-color: var(--blue-hover);
+}
+
+.container-input{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: red;
+    font-style: italic;
+    font-size: 13px;
+    width: 400px;
+}
+
+.message-erro{
+    float: left;
+    margin-left: 20px;
+    display: none;
+}
+
+.container-input-button{
+    display: flex;
+    column-gap: 20px;
+}
+
+.section-img figure{
+    max-width: 700px;
+}
+
+.section-img figure img{
+    width: 100%;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+    color: var(--gray);
+}
+
+.links-social ul{
+    list-style: none;
+    display: flex;
+    column-gap: 30px;
+}
+
+.links-social a{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--blue);
+    transition: background 0.5s ease-out;
+}
+
+.links-social a:hover{
+    color: white;
+    background-color: var(--blue);
+}
+
+@media(max-width: 641px){
+    .container-input-button{
+        flex-direction: column;
+        column-gap: 0px;
+        row-gap: 10px;
+        width: 80vw;
+    }
+    body{
+        padding: 20px;
+    }
+    button, .container-input{
+        width: 100%;
+    }
+
+    button{
+        height: 40px;      
+    }
+    input{
+        padding: 12px 12px 12px 30px;
+    }
+    html{
+        font-size: 53%;
+    }
+
+}
