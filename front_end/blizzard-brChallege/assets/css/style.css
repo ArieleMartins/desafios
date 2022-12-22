@@ -29,24 +29,14 @@ main{
     width: 100%;
 }
 
-.container-down{
-    opacity: 0;
-    transition: all 1s linear;
-}
-
-.disabled .container-down{
-    animation: animationOpacityDisabled 1s linear forwards;
-}
-
-.links{
-    display: flex;
-    column-gap: 100px;
-}
-
 header{
     border-bottom: 2px solid #ffffff34;
     position: relative;
     transition: all 1s linear;
+}
+
+header img{
+    max-width: 98px;
 }
 
 header .container{
@@ -66,12 +56,32 @@ header .container ul{
 header .container ul li i{
     opacity: 0.6;
 }
+
 header .container ul li{
     display: flex;
     column-gap: 15px;
     align-items:center;
     cursor: pointer;
 }
+
+.container-down{
+    transition: all 1s linear;
+}
+
+.disabled{
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+}
+
+.disabled .container-down{
+   opacity: 0;
+}
+
+.links{
+    display: flex;
+    column-gap: 100px;
+}
+
 .active .container ul li .open-menu{
     transform: rotate(180deg);
     color: #00AEFF;
@@ -84,7 +94,7 @@ header .container ul li{
 
 .down{
     position: absolute;
-    top: 108px;
+    top: 104px;
     width: 100%;
 }
 
@@ -95,6 +105,12 @@ header .container ul li{
 .active .container-down{
     opacity: 1;
     background: linear-gradient(180deg, #020203 0%, rgba(14, 17, 23, 0.856) 96.35%, rgba(14, 17, 23, 0.829) 100%);
+}
+
+.container-btns{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
 }
 
 .create{
@@ -122,18 +138,17 @@ header .container ul li{
     transition: all 1s linear;
 }
 
-.container-btns{
-    display: flex;
-    column-gap: 20px;
-    align-items: center;
-}
-
 .create:hover{
     background-color: white;
     color: black;
 }
+
 .login:hover{
     background: #60cdff;
+}
+
+.container-list{
+    padding: 30px 0px 30px 0px;
 }
 
 .list{
@@ -162,9 +177,21 @@ header .container ul li{
     background-color: #020203b4;
 }
 
-.container-list{
-    padding: 30px 0px 30px 0px;
+.flex-column{
+    display: flex;
+    flex-direction: column;
 }
+
+.footer{
+    background-color: var(--bg-color-dropdown-footer);
+    opacity: 0.7;
+}
+
+.footer .container{
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 
