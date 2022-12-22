@@ -8,45 +8,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Blizzard</title>
 </head>
 
 <body>
     <main>
-        <header>
+        <header class="header disabled">
             <div class="container">
                 <a href="#"><img src="assets/images/logo.png" alt="logo - Blizzard"></a>
 
                 <ul>
-                    <li>
-                        <div>Jogos <i class="fa-solid fa-chevron-down"></i></div>
-                        <div class="dow">
-                            <div>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <ul>
-                                    <li>Ver Jogos</li>
-                                    <li>Aplicativo Battle.net</li>
-                                    <li>Downloads</li>
-                                    <li>Fóruns dos jogos</li>
-                                </ul>
-                            </div>
-
-                        </div>
-
+                    <li id="menuGames">
+                        Jogos <i class="fa-solid fa-chevron-down"></i>
                     </li>
+                    <li>
+                        Esportes <i class="fa-solid fa-chevron-down"></i>
+                    </li>
+                    <li>Loja</li>
+                    <li>Notícias</li>
+                    <li>Suporte</li>
                 </ul>
 
                 <div>
                     <button>Criar conta</button>
                     <button>Logar</button>
                 </div>
+               
+            </div>
+            <div class="down">
+                <div class="container-down">
+                    <div>
+                        <ul class="list">
+    
+                        </ul>
+                    </div>
+                    <div class="footer">
+    
+                    </div>
+                </div>
             </div>
         </header>
+        
     </main>
+    <script src="assets/js/menugames.js"></script>
 </body>
 
 </html>

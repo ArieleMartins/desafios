@@ -9,4 +9,85 @@
 :root{
     --font-family: 'Poppins', sans-serif;
     --bg-color: #020203;
+    --bg-color-dropdown-footer:  #15171B;
 }
+
+body{
+    font-family: var(--font-family);
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+main{
+    background-image: url(../images/banner-hero/games/diablo-bg.png);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.container-down{
+    opacity: 0;
+    transition: all 1s linear;
+}
+
+.disabled .container-down{
+    animation: animationOpacityDisabled 1s linear forwards;
+}
+
+header{
+    border-bottom: 2px solid #ffffff34;
+    position: relative;
+    transition: all 1s linear;
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+header .container ul{
+    list-style: none;
+    display: flex;
+    column-gap: 8vh;
+    color: white;
+}
+
+header .container ul li i{
+    opacity: 0.6;
+}
+
+.active .container ul li i{
+    transform: rotate(180deg);
+    color: #00AEFF;
+}
+
+.active{
+    background: linear-gradient(180deg, #020203 0%, rgba(14, 17, 23, 0.856) 96.35%, rgba(14, 17, 23, 0.829) 100%);
+    backdrop-filter: blur(6px);
+}
+
+.down{
+    position: absolute;
+    top: 105px;
+    width: 100%;
+}
+
+.active .down{
+    backdrop-filter: blur(6px);
+}
+
+.active .container-down{
+    opacity: 1;
+    background: linear-gradient(180deg, #020203 0%, rgba(14, 17, 23, 0.856) 96.35%, rgba(14, 17, 23, 0.829) 100%);
+}
+
+
+
+
+
