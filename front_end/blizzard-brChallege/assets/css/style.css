@@ -38,6 +38,11 @@ main{
     animation: animationOpacityDisabled 1s linear forwards;
 }
 
+.links{
+    display: flex;
+    column-gap: 100px;
+}
+
 header{
     border-bottom: 2px solid #ffffff34;
     position: relative;
@@ -73,13 +78,13 @@ header .container ul li{
 }
 
 .active{
-    background: linear-gradient(180deg, #020203 0%, rgba(14, 17, 23, 0.856) 96.35%, rgba(14, 17, 23, 0.829) 100%);
+    background: #020203;
     backdrop-filter: blur(6px);
 }
 
 .down{
     position: absolute;
-    top: 105px;
+    top: 108px;
     width: 100%;
 }
 
@@ -94,7 +99,7 @@ header .container ul li{
 
 .create{
     padding: 10px 16px;
-    border: 0.788462px solid #FFFFFF;
+    border: 1px solid #FFFFFF;
     border-radius: 3px;
     background-color: transparent;
     color: white;
@@ -104,7 +109,7 @@ header .container ul li{
 }
 
 .login{
-    padding: 10px 25.2308px;
+    padding: 10px 25px;
     color: white;
     font-family: var(--font-family);
     background: #00AEFF;
@@ -131,7 +136,35 @@ header .container ul li{
     background: #60cdff;
 }
 
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 80px;
+}
 
+.list li{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+    width: 150px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+}
+
+.list li:hover img{
+    transform: scale(1.2);
+}
+
+.list li:hover{
+    background-color: #020203b4;
+}
+
+.container-list{
+    padding: 30px 0px 30px 0px;
+}
 
 
 

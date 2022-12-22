@@ -67,14 +67,14 @@ function showGames(){
         menuGames.children[0].classList.add('open-menu')
         listGames.forEach(game =>{
             ulGames.innerHTML += `
-                <img src="assets/images/banner-hero/icons/icon-games/${game.image}" alt="${game.name}"/>
-                <span>${game.name}</span>
+                <li>
+                    <img src="assets/images/banner-hero/icons/icon-games/${game.image}" alt="${game.name}"/>
+                    <span>${game.name}</span>
+                </li>
             `
         })
     }else{
-        setTimeout(()=>{
-            ulGames.innerHTML = ''
-        }, 700)
+        ulGames.innerHTML = ''
         menuGames.children[0].classList.remove('open-menu')
         header.classList.remove('active')
         header.classList.add('disabled')
