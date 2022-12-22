@@ -64,6 +64,7 @@ function showGames(){
     if(activeMenuGames){
         header.classList.add('active')
         header.classList.remove('disabled')
+        menuGames.children[0].classList.add('open-menu')
         listGames.forEach(game =>{
             ulGames.innerHTML += `
                 <img src="assets/images/banner-hero/icons/icon-games/${game.image}" alt="${game.name}"/>
@@ -74,7 +75,7 @@ function showGames(){
         setTimeout(()=>{
             ulGames.innerHTML = ''
         }, 700)
-        
+        menuGames.children[0].classList.remove('open-menu')
         header.classList.remove('active')
         header.classList.add('disabled')
     }
