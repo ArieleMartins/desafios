@@ -11,20 +11,20 @@ menuGames.addEventListener('click', showGames)
 menuEsports.addEventListener('click', showEsports)
 
 function showGames(){
-    
     ulList.innerHTML = ""
     ulFooter.innerHTML = ""
     activeMenuGames = !activeMenuGames
 
-    if(activeMenuGames){
-        header.classList.add('active')
-        header.classList.remove('disabled')
-        menuGames.children[0].classList.add('open-menu')
-        showListGames()
+    if(activeMenuEsports){
+        activeMenuEsports = false
+    }
+   
+    if(checkModalMenuActive()){
+        setTimeout(()=>{
+            activeMenu(false)
+        }, 500)
     }else{
-        menuGames.children[0].classList.remove('open-menu')
-        header.classList.remove('active')
-        header.classList.add('disabled')
+        activeMenu(false)
     }
     
 }
@@ -123,17 +123,19 @@ function showEsports(){
     activeMenuEsports = !activeMenuEsports
     ulList.innerHTML = ""
     ulFooter.innerHTML = ""
-
-    if(activeMenuEsports){
-        header.classList.add('active')
-        header.classList.remove('disabled')
-        menuGames.children[0].classList.add('open-menu')
-        showListEsports()
-    }else{
-        menuGames.children[0].classList.remove('open-menu')
-        header.classList.remove('active')
-        header.classList.add('disabled')
+    
+    if(activeMenuGames){
+        activeMenuGames = false
     }
+
+    if(checkModalMenuActive()){
+        setTimeout(()=>{
+            activeMenu(true)
+        }, 500)
+    }else{
+        activeMenu(true)
+    }
+
 }
 
 function showListEsports(){
@@ -170,4 +172,32 @@ function showListEsports(){
     })
 }
 
+
+function checkModalMenuActive(){
+    if(header.classList.contains("active")){
+        header.classList.remove("active")
+        header.classList.add("disabled")
+
+        return true
+    }
+
+    return false
+}
+
+function activeMenu(menu){
+    if(activeMenuEsports || activeMenuGames){
+        
+        header.classList.add('active')
+        header.classList.remove('disabled')
+        menuGames.children[0].classList.add('open-menu')
+
+        menu ? showListEsports() : showListGames()
+        
+    }else{
+        menuGames.children[0].classList.remove('open-menu')
+        header.classList.remove('active')
+        header.classList.add('disabled')
+
+    }
+}
 

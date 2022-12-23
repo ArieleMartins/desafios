@@ -9,7 +9,7 @@
 :root{
     --font-family: 'Poppins', sans-serif;
     --bg-color: #020203;
-    --bg-color-dropdown-footer:  #15171B;
+    --bg-color-dropdown-footer:  #15171bcc;
 }
 
 body{
@@ -24,13 +24,13 @@ body{
 main{
     background-image: url(../images/banner-hero/games/diablo-bg.png);
     background-position:center;
-    background-size: cover;
+    background-size:cover;
     background-repeat: no-repeat;
     width: 100%;
 }
 
 header{
-    border-bottom: 2px solid #ffffff34;
+    border-bottom: 1px solid #ffffff34;
     position: relative;
     transition: all 1s linear;
 }
@@ -39,7 +39,7 @@ header img{
     max-width: 98px;
 }
 
-header .container{
+header .space-items{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -94,7 +94,7 @@ header .container ul li{
 
 .down{
     position: absolute;
-    top: 104px;
+    top: 103px;
     width: 100%;
 }
 
@@ -167,10 +167,15 @@ header .container ul li{
     border-radius: 5px;
     text-align: center;
     padding: 10px;
+    color: rgba(255, 255, 255, 0.747);
 }
 
 .list li:hover img{
     transform: scale(1.2);
+}
+
+.list li:hover{
+    color: white;
 }
 
 .list li:hover{
@@ -182,15 +187,22 @@ header .container ul li{
     flex-direction: column;
 }
 
-.footer{
-    background-color: var(--bg-color-dropdown-footer);
-    opacity: 0.7;
+.disabled .footer{
+    opacity: 0;
 }
 
-.footer .container{
+
+.active .footer{
+    background-color: var(--bg-color-dropdown-footer);
+}
+
+.active .footer .container ul{
     align-items: center;
     justify-content: center;
+    height: 70px;
 }
+
+
 
 
 
