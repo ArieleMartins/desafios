@@ -30,6 +30,8 @@ function showGames(){
 }
 
 function showListGames(){
+    activeArrowMenu(false)
+
     const listGames = [
         {
             name: "Diablo® II ressurected",
@@ -139,6 +141,8 @@ function showEsports(){
 }
 
 function showListEsports(){
+    activeArrowMenu(true)
+
     var listEsports = [
         {
             image: "HearthstoneMasters.svg",
@@ -170,6 +174,13 @@ function showListEsports(){
         </li>
         `
     })
+
+    ulFooter.innerHTML = `
+    <li>
+        <img src="assets/images/banner-hero/icons/trofeu.svg" />
+        <span>Torneios da comunidade</span>
+    </li>
+    `
 }
 
 
@@ -189,15 +200,24 @@ function activeMenu(menu){
         
         header.classList.add('active')
         header.classList.remove('disabled')
-        menuGames.children[0].classList.add('open-menu')
-
+    
         menu ? showListEsports() : showListGames()
         
     }else{
         menuGames.children[0].classList.remove('open-menu')
         header.classList.remove('active')
         header.classList.add('disabled')
-
     }
 }
 
+function activeArrowMenu(menu){
+    if(menu){
+        menuGames.children[0].classList.contains('open-menu') ? menuGames.children[0].classList.remove('open-menu') : menuGames
+
+        menuEsports.children[0].classList.add('open-menu')
+    }else{
+        menuEsports.children[0].classList.contains('open-menu') ? menuEsports.children[0].classList.remove('open-menu') : menuEsports
+
+        menuGames.children[0].classList.add('open-menu')
+    }
+}
