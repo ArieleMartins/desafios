@@ -30,7 +30,7 @@ function showGames(){
 }
 
 function showListGames(){
-    activeArrowMenu(false)
+    activeArrowMenu(menuGames, menuEsports)
 
     const listGames = [
         {
@@ -141,7 +141,7 @@ function showEsports(){
 }
 
 function showListEsports(){
-    activeArrowMenu(true)
+    activeArrowMenu(menuEsports, menuGames)
 
     var listEsports = [
         {
@@ -210,14 +210,7 @@ function activeMenu(menu){
     }
 }
 
-function activeArrowMenu(menu){
-    if(menu){
-        menuGames.children[0].classList.contains('open-menu') ? menuGames.children[0].classList.remove('open-menu') : menuGames
-
-        menuEsports.children[0].classList.add('open-menu')
-    }else{
-        menuEsports.children[0].classList.contains('open-menu') ? menuEsports.children[0].classList.remove('open-menu') : menuEsports
-
-        menuGames.children[0].classList.add('open-menu')
-    }
+function activeArrowMenu(menuOpen, closeMenu){
+    closeMenu.children[0].classList.contains('open-menu') ? closeMenu.children[0].classList.remove('open-menu') : closeMenu
+    menuOpen.children[0].classList.add('open-menu')
 }
