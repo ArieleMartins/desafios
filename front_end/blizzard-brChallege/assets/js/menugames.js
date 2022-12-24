@@ -11,8 +11,7 @@ menuGames.addEventListener('click', showGames)
 menuEsports.addEventListener('click', showEsports)
 
 function showGames(){
-    ulList.innerHTML = ""
-    ulFooter.innerHTML = ""
+    cleanMenu()
     activeMenuGames = !activeMenuGames
 
     if(activeMenuEsports){
@@ -122,9 +121,8 @@ function showListGames(){
 }
 
 function showEsports(){
+    cleanMenu()
     activeMenuEsports = !activeMenuEsports
-    ulList.innerHTML = ""
-    ulFooter.innerHTML = ""
     
     if(activeMenuGames){
         activeMenuGames = false
@@ -196,6 +194,8 @@ function checkModalMenuActive(){
 }
 
 function activeMenu(menu){
+    cleanMenu()
+
     if(activeMenuEsports || activeMenuGames){
         
         header.classList.add('active')
@@ -213,4 +213,10 @@ function activeMenu(menu){
 function activeArrowMenu(menuOpen, closeMenu){
     closeMenu.children[0].classList.contains('open-menu') ? closeMenu.children[0].classList.remove('open-menu') : closeMenu
     menuOpen.children[0].classList.add('open-menu')
+}
+
+
+function cleanMenu(){
+    ulList.innerHTML = ""
+    ulFooter.innerHTML = ""
 }
