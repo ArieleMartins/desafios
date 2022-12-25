@@ -33,6 +33,39 @@ function checkMenuClick(menu){
     return selectedMenu
 }
 
+function checkModalMenuActive(){
+    if(header.classList.contains("active")){
+        header.classList.remove("active")
+        header.classList.add("disabled")
+
+        return true
+    }
+
+    return false
+}
+
+function activeMenu(menu){
+    cleanMenu()
+
+    if(activeMenuEsports || activeMenuGames){
+        
+        header.classList.add('active')
+        header.classList.remove('disabled')
+    
+        menu ? showListEsports() : showListGames()
+        
+    }else{
+        menuGames.children[0].classList.remove('open-menu')
+        header.classList.remove('active')
+        header.classList.add('disabled')
+    }
+}
+
+function cleanMenu(){
+    ulList.innerHTML = ""
+    ulFooter.innerHTML = ""
+}
+
 function showListGames(){
     activeArrowMenu(menuGames, menuEsports)
 
@@ -169,41 +202,8 @@ function showListEsports(){
     `
 }
 
-
-function checkModalMenuActive(){
-    if(header.classList.contains("active")){
-        header.classList.remove("active")
-        header.classList.add("disabled")
-
-        return true
-    }
-
-    return false
-}
-
-function activeMenu(menu){
-    cleanMenu()
-
-    if(activeMenuEsports || activeMenuGames){
-        
-        header.classList.add('active')
-        header.classList.remove('disabled')
-    
-        menu ? showListEsports() : showListGames()
-        
-    }else{
-        menuGames.children[0].classList.remove('open-menu')
-        header.classList.remove('active')
-        header.classList.add('disabled')
-    }
-}
-
 function activeArrowMenu(menuOpen, closeMenu){
     closeMenu.children[0].classList.contains('open-menu') ? closeMenu.children[0].classList.remove('open-menu') : closeMenu
     menuOpen.children[0].classList.add('open-menu')
 }
 
-function cleanMenu(){
-    ulList.innerHTML = ""
-    ulFooter.innerHTML = ""
-}
