@@ -7,25 +7,30 @@ const ulFooter = document.querySelector('.list-links')
 var activeMenuGames = false
 var activeMenuEsports = false
 
-menuGames.addEventListener('click', showGames)
-menuEsports.addEventListener('click', showEsports)
+menuGames.addEventListener('click', () =>{ showMenu(true) })
+menuEsports.addEventListener('click', () =>{ showMenu(false) })
 
-function showGames(){
+function showMenu(menu){
     cleanMenu()
-    activeMenuGames = !activeMenuGames
 
-    if(activeMenuEsports){
-        activeMenuEsports = false
-    }
-   
+    menu ? activeMenuGames = !activeMenuGames : activeMenuEsports = !activeMenuEsports
+    menu ? activeMenuEsports = false : activeMenuGames = false
+
     if(checkModalMenuActive()){
         setTimeout(()=>{
-            activeMenu(false)
+            activeMenu(checkMenuClick(menu))
         }, 500)
     }else{
-        activeMenu(false)
+        activeMenu(checkMenuClick(menu))
     }
     
+}
+
+function checkMenuClick(menu){
+    var selectedMenu
+    menu ?  selectedMenu = false : selectedMenu = true
+
+    return selectedMenu
 }
 
 function showListGames(){
@@ -120,23 +125,6 @@ function showListGames(){
     })
 }
 
-function showEsports(){
-    cleanMenu()
-    activeMenuEsports = !activeMenuEsports
-    
-    if(activeMenuGames){
-        activeMenuGames = false
-    }
-
-    if(checkModalMenuActive()){
-        setTimeout(()=>{
-            activeMenu(true)
-        }, 500)
-    }else{
-        activeMenu(true)
-    }
-
-}
 
 function showListEsports(){
     activeArrowMenu(menuEsports, menuGames)
@@ -214,7 +202,6 @@ function activeArrowMenu(menuOpen, closeMenu){
     closeMenu.children[0].classList.contains('open-menu') ? closeMenu.children[0].classList.remove('open-menu') : closeMenu
     menuOpen.children[0].classList.add('open-menu')
 }
-
 
 function cleanMenu(){
     ulList.innerHTML = ""
