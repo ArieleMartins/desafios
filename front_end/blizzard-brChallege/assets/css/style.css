@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 *{
     margin: 0;
@@ -33,17 +34,30 @@ header{
     border-bottom: 1px solid #ffffff34;
     position: relative;
     transition: all 1s linear;
+    position: relative;
+    z-index: 1;
 }
 
 header img{
     max-width: 98px;
+   
+}
+
+header::before{
+    content: '';
+    width: 43px;
+    height: 2.5px;
+    background-color:#00AEFF;
+    position: absolute;
+    bottom: -1.5px;
+    left: 100px;
 }
 
 header .space-items{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 20px;
 }
 
 header .container ul{
@@ -55,6 +69,7 @@ header .container ul{
 
 header .container ul li i{
     opacity: 0.6;
+    font-size: 14px;
 }
 
 header .container ul li{
@@ -94,7 +109,7 @@ header .container ul li{
 
 .down{
     position: absolute;
-    top: 103px;
+    top: 83px;
     width: 100%;
 }
 
@@ -151,23 +166,18 @@ header .container ul li{
     padding: 30px 0px 30px 0px;
 }
 
-.list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 80px;
-}
+
 
 .list li{
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    align-items: center;
-    width: 150px;
+    align-items: center;   
     border-radius: 5px;
     text-align: center;
     padding: 10px;
     color: rgba(255, 255, 255, 0.747);
+    font-family: 'Inter', sans-serif;
 }
 
 .list li:hover img{
@@ -178,8 +188,37 @@ header .container ul li{
     color: white;
 }
 
-.list li:hover{
+.list.game li{
+    width: 150px;
+}
+
+.list.game{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 80px;
+    padding: 0px 30px 0px 30px;
+}
+
+.list.game li:hover{
     background-color: #020203b4;
+}
+
+.list.esport li{
+    width: 210px;
+}
+
+.list.esport{
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.list.esport li img{
+    max-width: 170px;
+    transition: all 0.5s linear;
 }
 
 .flex-column{

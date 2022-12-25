@@ -13,13 +13,13 @@ menuEsports.addEventListener('click', () =>{ showMenu(true) })
 function showMenu(menu){
     cleanMenu()
 
-    menu ? activeMenuEsports = !activeMenuEsports : activeMenuGames = !activeMenuGames 
+    menu ? activeMenuEsports = !activeMenuEsports : activeMenuGames = !activeMenuGames
     menu ? activeMenuGames = false : activeMenuEsports = false 
 
     if(checkModalMenuActive()){
         setTimeout(()=>{
             activeMenu(menu)
-        }, 500)
+        }, 1000)
     }else{
         activeMenu(menu)
     }
@@ -45,7 +45,7 @@ function activeMenu(menu){
         header.classList.add('active')
         header.classList.remove('disabled')
     
-        menu ? showListEsports() : showListGames()
+        menu ? showListEsports(menu) : showListGames(menu)
         
     }else{
         menuGames.children[0].classList.remove('open-menu')
@@ -59,8 +59,9 @@ function cleanMenu(){
     ulFooter.innerHTML = ""
 }
 
-function showListGames(){
+function showListGames(menu){
     activeArrowMenu(menuGames, menuEsports)
+    addStyleListMenu(menu)
 
     const listGames = [
         {
@@ -152,9 +153,9 @@ function showListGames(){
 }
 
 
-function showListEsports(){
+function showListEsports(menu){
     activeArrowMenu(menuEsports, menuGames)
-
+    addStyleListMenu(menu)
     var listEsports = [
         {
             image: "HearthstoneMasters.svg",
@@ -200,3 +201,13 @@ function activeArrowMenu(menuOpen, closeMenu){
     menuOpen.children[0].classList.add('open-menu')
 }
 
+
+function addStyleListMenu(menu){
+    if(menu){
+        ulList.classList.contains('game') ? ulList.classList.remove('game') : ulList.classList.add('esport')
+        !ulList.classList.contains('game') ? ulList.classList.add('esport') : ulList
+    }else{
+        ulList.classList.contains('esport') ? ulList.classList.remove('esport') : ulList.classList.add('game')
+        !ulList.classList.contains('esport') ? ulList.classList.add('game') : ulList
+    }
+}
