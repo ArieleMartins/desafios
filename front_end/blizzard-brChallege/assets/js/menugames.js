@@ -7,30 +7,23 @@ const ulFooter = document.querySelector('.list-links')
 var activeMenuGames = false
 var activeMenuEsports = false
 
-menuGames.addEventListener('click', () =>{ showMenu(true) })
-menuEsports.addEventListener('click', () =>{ showMenu(false) })
+menuGames.addEventListener('click', () =>{ showMenu(false) })
+menuEsports.addEventListener('click', () =>{ showMenu(true) })
 
 function showMenu(menu){
     cleanMenu()
 
-    menu ? activeMenuGames = !activeMenuGames : activeMenuEsports = !activeMenuEsports
-    menu ? activeMenuEsports = false : activeMenuGames = false
+    menu ? activeMenuEsports = !activeMenuEsports : activeMenuGames = !activeMenuGames 
+    menu ? activeMenuGames = false : activeMenuEsports = false 
 
     if(checkModalMenuActive()){
         setTimeout(()=>{
-            activeMenu(checkMenuClick(menu))
+            activeMenu(menu)
         }, 500)
     }else{
-        activeMenu(checkMenuClick(menu))
+        activeMenu(menu)
     }
     
-}
-
-function checkMenuClick(menu){
-    var selectedMenu
-    menu ?  selectedMenu = false : selectedMenu = true
-
-    return selectedMenu
 }
 
 function checkModalMenuActive(){
