@@ -10,7 +10,7 @@
 :root{
     --font-family: 'Poppins', sans-serif;
     --bg-color: #020203;
-    --bg-color-dropdown-footer:  #15171bcc;
+    --bg-color-dropdown-footer:  #15171Bea;
 }
 
 body{
@@ -158,7 +158,7 @@ header .container ul li{
     color: black;
 }
 
-.login:hover{
+.login:hover, .container-title-link a:hover{
     background: #60cdff;
 }
 
@@ -241,8 +241,73 @@ header .container ul li{
     height: 70px;
 }
 
+/* conteudo main */
 
+.padding{
+    padding: 90px 0px 90px 0px;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 160px;
+}
 
+.list-games{
+    list-style:none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
 
+.list-games li button{
+    background-color: transparent;
+    border:0;
+}
 
+.list-games li button img{
+    max-width: 50px;
+    filter: saturate(0);
+    cursor: pointer;
+}
 
+.list-games li button:hover img{
+    filter: saturate(1);
+}
+
+.container-title-link, .container-title{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.container-title-link{
+    row-gap: 50px;
+}
+
+.container-title{
+    row-gap: 5px;
+}
+
+.container-title h1{
+    font-size: 3.7rem;
+}
+
+.container-title h4{
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.container-title-link a{
+    padding: 14px 32px;
+    width: 168px;
+    height: 52px;
+    background: #00AEFF;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 1s linear;
+}
+
+.container-trailer img{
+    width: 280px;
+    height: 158px;
+}
