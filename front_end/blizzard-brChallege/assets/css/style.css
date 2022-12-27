@@ -11,6 +11,8 @@
     --font-family: 'Poppins', sans-serif;
     --bg-color: #020203;
     --bg-color-dropdown-footer:  #15171Bea;
+    --two-font-family: 'Inter', sans-serif;
+    --hover-border-play: #005379ab;
 }
 
 body{
@@ -57,7 +59,7 @@ header .space-items{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    padding: 19px;
 }
 
 header .container ul{
@@ -177,7 +179,7 @@ header .container ul li{
     text-align: center;
     padding: 10px;
     color: rgba(255, 255, 255, 0.747);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--two-font-family);
 }
 
 .list li:hover img{
@@ -242,24 +244,36 @@ header .container ul li{
 }
 
 /* conteudo main */
-
 .padding{
-    padding: 90px 0px 90px 0px;
     display: flex;
+    height: 83vh;
+}
+
+.container-title-trailer, .padding{
     justify-content: space-between;
     column-gap: 160px;
+    align-items: center;
+}
+
+.container-title-trailer{
+    display: flex;
+    height: 100%;
 }
 
 .list-games{
     list-style:none;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 15px;
 }
 
 .list-games li button{
     background-color: transparent;
     border:0;
+}
+
+.list-games .active-game button img{
+    filter: saturate(1);
 }
 
 .list-games li button img{
@@ -280,14 +294,18 @@ header .container ul li{
 
 .container-title-link{
     row-gap: 50px;
+    height: 70%;
+   padding-top: 40px;
 }
 
 .container-title{
-    row-gap: 5px;
+    row-gap: 20px;
+   
 }
 
 .container-title h1{
-    font-size: 3.7rem;
+    font-size: 4.5rem;
+    line-height: 80px;
 }
 
 .container-title h4{
@@ -307,7 +325,81 @@ header .container ul li{
     transition: all 1s linear;
 }
 
-.container-trailer img{
+.container-logo-trailer{
+    position: relative;
+    height:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trailer{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container-trailer small{
+    color: white;
+    font-weight: 600;
+    float: right;
+    font-family: var(--two-font-family);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.container-trailer .trailer {
     width: 280px;
     height: 158px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    
 }
+
+.container-trailer .trailer img{
+    transition: opacity 1s linear;
+}
+
+.container-trailer .trailer::after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(136.72deg, rgba(7, 7, 10, 0.86) 19.22%, rgba(15, 16, 22, 0.5) 76.59%);
+    position: absolute;
+    
+    transition: all 0.5s linear;
+}
+
+.container-trailer .trailer::before{
+    content: "";
+    width:0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 13px solid #00aeff;
+    position: absolute;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.container-trailer .trailer:hover::after{
+    background: #00aeff;
+    border: 5px solid var(--hover-border-play);
+    opacity: 0.6;
+}
+
+.container-trailer .trailer:hover::before{
+    border-left-color: rgba(7, 7, 10, 0.86);
+}
+
+.container-trailer .trailer:hover{
+    background-image: url(../images/banner-hero/games/diablo-animation.gif);
+}
+
+.container-trailer .trailer:hover img{
+    opacity: 0;
+}
+
+
