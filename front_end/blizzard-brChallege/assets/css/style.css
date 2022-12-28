@@ -111,10 +111,10 @@ header .container ul li{
 
 .down{
     position: absolute;
-    top: 83px;
+    top: 81px;
     width: 100%;
+    z-index: 1;
 }
-
 .active .down{
     backdrop-filter: blur(6px);
 }
@@ -249,6 +249,7 @@ header .container ul li{
     height: 83vh;
 }
 
+
 .container-title-trailer, .padding{
     justify-content: space-between;
     column-gap: 160px;
@@ -300,11 +301,10 @@ header .container ul li{
 
 .container-title{
     row-gap: 20px;
-   
 }
 
 .container-title h1{
-    font-size: 4.5rem;
+    font-size: 3.2rem;
     line-height: 80px;
 }
 
@@ -342,7 +342,7 @@ header .container ul li{
 .container-trailer small{
     color: white;
     font-weight: 600;
-    float: right;
+    text-align: right;
     font-family: var(--two-font-family);
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -354,25 +354,23 @@ header .container ul li{
     background-position: center;
     background-size: cover;
     border-radius: 5px;
-    
 }
 
 .container-trailer .trailer img{
     transition: opacity 1s linear;
 }
 
-.container-trailer .trailer::after{
+.container-trailer .trailer::before{
     content: "";
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: linear-gradient(136.72deg, rgba(7, 7, 10, 0.86) 19.22%, rgba(15, 16, 22, 0.5) 76.59%);
     position: absolute;
-    
     transition: all 0.5s linear;
 }
 
-.container-trailer .trailer::before{
+.container-trailer .trailer::after{
     content: "";
     width:0; 
     height: 0; 
@@ -381,16 +379,16 @@ header .container ul li{
     border-left: 13px solid #00aeff;
     position: absolute;
     background-color: transparent;
-    z-index: 1;
+
 }
 
-.container-trailer .trailer:hover::after{
+.container-trailer .trailer:hover::before{
     background: #00aeff;
     border: 5px solid var(--hover-border-play);
     opacity: 0.6;
 }
 
-.container-trailer .trailer:hover::before{
+.container-trailer .trailer:hover::after{
     border-left-color: rgba(7, 7, 10, 0.86);
 }
 
@@ -401,5 +399,99 @@ header .container ul li{
 .container-trailer .trailer:hover img{
     opacity: 0;
 }
+.container-trailer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+   justify-content: flex-end;
+}
+.link-trailer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.container-logo img{
+    max-width: 290px;
+}
+@media(max-width:1300px){
+     .padding{
+        justify-content: inherit;
+        column-gap: 0px;
+        flex-direction:column-reverse;
+        row-gap: 80px;
+        align-items: inherit;
+        height: 100%;
+        padding: 30px 30px 70px 30px;
+    }
+
+    .list-games{
+        flex-direction: row;
+        column-gap: 20px;
+        
+    }
+    html{
+        font-size: 70%;
+    }
+    .container-trailer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .container-logo-trailer{
+        position: absolute;
+        right: 30px;
+        top: 60px;
+    }
+    .container-trailer .trailer, .container-trailer .trailer img {
+        width: 250px;
+        height: 128px;
+    }
+    .container-logo-trailer{
+        height:80%;
+    }
+    .container-title{
+        width: 70%;
+    }
+    .section-main{
+        position: relative;
+    }
+
+}
 
 
+@media(max-width: 1120px){
+    .links .menus{
+        display: none;
+    }
+}
+
+@media(max-width:725px){
+    html{
+        font-size: 60%;
+    }
+    .container-logo-trailer{
+        display: none;
+    }
+    .container-title h1{
+        line-height: 40px;
+    }
+    .container-title{
+        width: 80%;
+    }
+    .container-title-link{
+        padding:0;
+        height: 100%;
+    }
+    .padding{
+        padding: 30px 0px 30px 0px;
+        row-gap: 40px;
+    }
+    .container-btns{
+        display: none;
+    }
+    .list-games li button img{
+        max-width: 40px;
+    }
+}

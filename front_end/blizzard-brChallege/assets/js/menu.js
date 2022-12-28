@@ -1,5 +1,3 @@
-const menuGames = document.getElementById('menuGames')
-const menuEsports = document.getElementById('menuEsports')
 const header = document.querySelector(".header")
 const ulList = document.querySelector('.list')
 const ulFooter = document.querySelector('.list-links')
@@ -7,10 +5,7 @@ const ulFooter = document.querySelector('.list-links')
 var activeMenuGames = false
 var activeMenuEsports = false
 
-menuGames.addEventListener('click', () =>{ showMenu(false) })
-menuEsports.addEventListener('click', () =>{ showMenu(true) })
-
-function showMenu(menu){
+export function showMenu(menu){
     cleanMenu()
 
     menu ? activeMenuEsports = !activeMenuEsports : activeMenuGames = !activeMenuGames
