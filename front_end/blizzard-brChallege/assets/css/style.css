@@ -30,6 +30,17 @@ main{
     background-size:cover;
     background-repeat: no-repeat;
     width: 100%;
+    position: relative;
+}
+
+main::before{
+    content: '';
+    width: 20%;
+    height: 4px;
+    background-color: #00AEFF;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s linear;
 }
 
 header{
@@ -212,7 +223,7 @@ header .container ul li{
 
 .list.esport{
     display: flex;
-    column-gap: 50px;
+    column-gap: 20px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -275,16 +286,19 @@ header .container ul li{
 
 .list-games .active-game button img{
     filter: saturate(1);
+    opacity: 1;
 }
 
 .list-games li button img{
     max-width: 50px;
     filter: saturate(0);
     cursor: pointer;
+    opacity: 0.7;
 }
 
 .list-games li button:hover img{
     filter: saturate(1);
+    opacity: 1;
 }
 
 .container-title-link, .container-title{
@@ -296,7 +310,6 @@ header .container ul li{
 .container-title-link{
     row-gap: 50px;
     height: 70%;
-   padding-top: 40px;
 }
 
 .container-title{
@@ -415,6 +428,9 @@ header .container ul li{
 .container-logo img{
     max-width: 290px;
 }
+
+
+
 @media(max-width:1300px){
      .padding{
         justify-content: inherit;
@@ -425,7 +441,7 @@ header .container ul li{
         height: 100%;
         padding: 30px 30px 70px 30px;
     }
-
+    
     .list-games{
         flex-direction: row;
         column-gap: 20px;

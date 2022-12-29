@@ -7,7 +7,8 @@ var games = [
         subtitle: 'O retorno de Lilith traz uma era de escuridão e sofrimento',
         imgTrailer: 'diablo-animation-cover.png',
         gifTrailer: 'diablo-animation.gif',
-        trailer: 'https://www.youtube.com/watch?v=jFtk_7tvAVc'
+        trailer: 'https://www.youtube.com/watch?v=jFtk_7tvAVc',
+        bar: '20%'
     },
     {
         image : 'hearthstone-bg.png',
@@ -17,7 +18,8 @@ var games = [
         subtitle: 'A Horda e a Aliança se encontraram no Vale Alterac para lutar',
         imgTrailer: 'hearthstone-animation-cover.png',
         gifTrailer: 'hearthstone-animation.gif',
-        trailer: 'https://www.youtube.com/watch?v=SCq4WmfRPyg'
+        trailer: 'https://www.youtube.com/watch?v=SCq4WmfRPyg',
+        bar: '40%'
     },
     {
         image : 'wow-bg.png',
@@ -27,7 +29,8 @@ var games = [
         subtitle: 'O que jaz além do mundo que você conhece?',
         imgTrailer: 'wow-animation-cover.png',
         gifTrailer: 'wow-animation.gif',
-        trailer: 'https://www.youtube.com/watch?v=qtDfA8gU9ik'
+        trailer: 'https://www.youtube.com/watch?v=qtDfA8gU9ik',
+        bar:'60%'
     },
     {
         image : 'none',
@@ -37,17 +40,19 @@ var games = [
         subtitle: '',
         imgTrailer: '',
         gifTrailer: '',
-        trailer: ''
+        trailer: '',
+        bar: '80%'
     },
     {
         image : 'none',
         game: 'StarCraft',
-        logo: '',
-        title:'',
-        subtitle: '',
+        logo: 'StarCraft_Remastered_Logo.png',
+        title:'Batalhas infinitas, inimigos infinitos',
+        subtitle: 'Que tal mergulhar de cabeça na origem do universo StarCraft?',
         imgTrailer: '',
         gifTrailer: '',
-        trailer: ''
+        trailer: '',
+        bar:'100%'
     },
 ]
 var parent
@@ -82,6 +87,7 @@ function gameSelected(game){
         trailer.addEventListener('mouseover', ()=>{
             trailer.style.backgroundImage = `url(assets/images/banner-hero/games/${game.gifTrailer})`
         })
+        document.styleSheets[1].cssRules[7].style.width = game.bar
         imgTrailer.setAttribute("src", `assets/images/banner-hero/games/${game.imgTrailer}`)
         logo.setAttribute('src', `assets/images/banner-hero/games/${game.logo}`)
     }
