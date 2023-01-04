@@ -1,5 +1,6 @@
 import { showMenu } from "./menu.js"
 import { selectGame } from "./main.js"
+import { api } from "./api.js"
 
 const menuGames = document.getElementById('menuGames')
 const menuEsports = document.getElementById('menuEsports')
@@ -53,3 +54,5 @@ function createElementAddList( game){
     img.setAttribute('src', game.image)
     button.addEventListener('click', (element) => selectGame(element))
 }
+
+api()
