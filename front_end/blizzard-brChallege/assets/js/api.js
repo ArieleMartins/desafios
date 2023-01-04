@@ -9,16 +9,18 @@ export async function api(){
 
     values.forEach(value => {
         list.innerHTML += `
-        <div>
+        <div class="container-capa-game">
             <div class="container-image-game">
-                <img src='${value.image}' alt='' class="game-image"/>
-                <img src='' alt=''/>
+                <img src='${value.image}' alt='${value.name}' class="game-image"/>
+                <div class="container-img-logo-game">
+                <img src='${value.logo}' alt='Logo ${value.name}' class="logo-game"/>
+                </div>
                 <div class="bg-hover">
                 </div>
             </div>
             <div>
-                <span></span>
-                <span></span>
+                <h3 class="name-game">${value.name}</h3>
+                <span class="category-game">${value.category}</span>
             </div>
         </div>
         `
