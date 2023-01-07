@@ -76,6 +76,20 @@ main::before{
     padding: 19px;
 }
 
+.header .container .links .menus li:hover{
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.header .container .links .menus{
+    column-gap: 15px;
+}
+
+.header .container .links .menus li{
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    transition: all .4s ease;
+}
+
 .header .container ul{
     list-style: none;
     display: flex;
