@@ -5,6 +5,9 @@ import { api } from "./api.js"
 const menuGames = document.getElementById('menuGames')
 const menuEsports = document.getElementById('menuEsports')
 const list = document.querySelector(".list-games")
+const modal = document.querySelector('.container-modal')
+const btnLogin = document.querySelector('.login')
+const close = document.querySelector('.close')
 
 menuGames.addEventListener('click', () =>{ showMenu(false) })
 menuEsports.addEventListener('click', () =>{ showMenu(true) })
@@ -79,4 +82,16 @@ function checkSystemAddButton(){
             <span> Baixar para o MacOS</span>
         `
     }
+}
+
+btnLogin.addEventListener('click', () =>{modalLogin(true)})
+
+close.addEventListener('click', () =>{ modalLogin(false) })
+function modalLogin(show){
+    if(show){
+        modal.style.display = 'flex'
+    }else{
+        modal.style.display = 'none'
+    }   
+    
 }
