@@ -56,3 +56,27 @@ function createElementAddList( game){
 }
 
 api()
+
+checkSystemAddButton()
+
+function checkSystemAddButton(){
+    const btn = document.querySelector('.btn-download')
+    const system = window.navigator.userAgent
+
+    if(system.includes("Linux")){
+        btn.innerHTML = `
+            <img src="assets/images/banner-hero/icons/LINUX.svg" />
+            <span> Baixar para o Linux</span>
+        `
+    }else if(system.includes('Windows')){
+        btn.innerHTML = `
+            <img src="assets/images/banner-hero/icons/WINDOWS.svg" />
+            <span> Baixar para o Windows</span>
+        `
+    }else{
+        btn.innerHTML = `
+            <img src="assets/images/banner-hero/icons/MAC.svg" />
+            <span> Baixar para o MacOS</span>
+        `
+    }
+}
