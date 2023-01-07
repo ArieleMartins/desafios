@@ -95,6 +95,15 @@ main::before{
     cursor: pointer;
 }
 
+.menu-hambu{
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.678);
+    display: none;
+    cursor: pointer;
+}
+
+/* modal list games and menu */
+
 .container-down{
     transition: all 1s linear;
 }
@@ -258,6 +267,7 @@ main::before{
 }
 
 /* conteudo main */
+
 .padding{
     display: flex;
     height: 83vh;
@@ -285,6 +295,15 @@ main::before{
 .list-games li button{
     background-color: transparent;
     border:0;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+
+.list-games li button:hover{
+    background-color: #cccccc15;
 }
 
 .list-games .active-game button img{
@@ -293,7 +312,7 @@ main::before{
 }
 
 .list-games li button img{
-    max-width: 50px;
+    max-width: 45px;
     filter: saturate(0);
     cursor: pointer;
     opacity: 0.7;
@@ -329,17 +348,27 @@ main::before{
     font-size: 1.2rem;
 }
 
-.container-title-link a{
+.container-title-link button{
     padding: 14px 32px;
-    width: 168px;
-    height: 52px;
+    font-size: 1rem;
+    font-family: var(--font-family);
     background: #00AEFF;
     border-radius: 4px;
     color: white;
+    border: 0;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 1s linear;
+    display: flex;
+    column-gap: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
+
+.container-title-link button:hover{
+    background-color: #60cdff;
+}
+
 
 .container-logo-trailer{
     position: relative;
@@ -587,7 +616,6 @@ footer{
     background-image: url(../images/footer-background.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -684,7 +712,7 @@ footer{
 }
 
 .modal{
-    width: 696px;
+    width: 560px;
     border-radius: 4px;
     background-image: url(../images/background-modal.png);
     background-size: cover;
@@ -852,9 +880,7 @@ form{
 
     .games-title{
         display: none;
-    }
-
-    
+    }  
 
 }
 
@@ -879,6 +905,19 @@ form{
         width: 100%;
         max-width: 780px;
     }
+    .menu-hambu{
+        display: block;
+    }
+
+    .container-modal{
+        align-items: inherit;
+        justify-content: inherit;
+    }
+
+    .modal{
+        width: 100%;
+        height: 100vh;
+    }
 }
 
 @media(max-width:725px){
@@ -902,7 +941,7 @@ form{
         padding: 30px 0px 30px 0px;
         row-gap: 40px;
     }
-    .header .container-btns{
+    .header .container-btns button{
         display: none;
     }
     .list-games li button img{
@@ -934,12 +973,12 @@ form{
         overflow-x: hidden;
     }
     .container-img-footer .app{
-        right: -60px;
+        right: -30px;
         bottom: 0;
         max-width: 400px;
     }
     .container-img-footer .app-mini{
-        right: -80px;
+        right: -40px;
         bottom: 0px;
         width: 100%;
         max-width: 350px;
@@ -958,7 +997,7 @@ form{
     }
 
     .list-more-games{
-        height: 81%;
+        height: 90%;
     }
 
     .icon-more-games a{
@@ -967,6 +1006,10 @@ form{
 
     .icon-more-games a img{
         max-width: 7px;
+    }
+
+    .name-game, .category-game{
+        display: none;
     }
 }
 
@@ -977,7 +1020,7 @@ form{
         max-width: 70px;
     }
     .list-more-games{
-        height: 68%;
+        height: 90%;
     }
 }
 

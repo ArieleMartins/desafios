@@ -8,7 +8,8 @@ var games = [
         imgTrailer: 'diablo-animation-cover.png',
         gifTrailer: 'diablo-animation.gif',
         trailer: 'https://www.youtube.com/watch?v=jFtk_7tvAVc',
-        bar: '20%'
+        bar: '20%',
+        btn: 'Jogue agora'
     },
     {
         image : 'hearthstone-bg.png',
@@ -19,7 +20,8 @@ var games = [
         imgTrailer: 'hearthstone-animation-cover.png',
         gifTrailer: 'hearthstone-animation.gif',
         trailer: 'https://www.youtube.com/watch?v=SCq4WmfRPyg',
-        bar: '40%'
+        bar: '40%',
+        btn: '<img src="assets/images/banner-hero/icons/perfil.svg"><span>Reserve agora na pré-venda</span>'
     },
     {
         image : 'wow-bg.png',
@@ -30,7 +32,8 @@ var games = [
         imgTrailer: 'wow-animation-cover.png',
         gifTrailer: 'wow-animation.gif',
         trailer: 'https://www.youtube.com/watch?v=qtDfA8gU9ik',
-        bar:'60%'
+        bar:'60%',
+        btn: '<img src="assets/images/banner-hero/icons/perfil.svg"><span>Reserve agora na pré-venda</span>'
     },
     {
         image : 'none',
@@ -41,7 +44,8 @@ var games = [
         imgTrailer: '',
         gifTrailer: '',
         trailer: '',
-        bar: '80%'
+        bar: '80%',
+        btn: ''
     },
     {
         image : 'none',
@@ -52,7 +56,8 @@ var games = [
         imgTrailer: '',
         gifTrailer: '',
         trailer: '',
-        bar:'100%'
+        bar:'100%',
+        btn: ''
     },
 ]
 var parent
@@ -77,6 +82,7 @@ function gameSelected(game){
     const subtitle = document.querySelector('h4')
     const imgTrailer = document.querySelector('.img-trailer')
     const trailer = document.querySelector('.trailer')
+    const btnBanner = document.querySelector('.btn-banner')
    
     if(game.image != 'none'){
         checkLiActivesAfter()
@@ -84,6 +90,7 @@ function gameSelected(game){
         parent.classList.add('active-game')
         title.innerHTML = game.title
         subtitle.innerHTML = game.subtitle
+        btnBanner.innerHTML = game.btn
         trailer.addEventListener('mouseover', ()=>{
             trailer.style.backgroundImage = `url(assets/images/banner-hero/games/${game.gifTrailer})`
         })

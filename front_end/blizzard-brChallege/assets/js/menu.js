@@ -1,6 +1,7 @@
 const header = document.querySelector(".header")
 const ulList = document.querySelector('.list')
 const ulFooter = document.querySelector('.list-links')
+const menuHambu = document.querySelector('.menu-hambu')
 
 var activeMenuGames = false
 var activeMenuEsports = false
@@ -205,4 +206,10 @@ function addStyleListMenu(menu){
         ulList.classList.contains('esport') ? ulList.classList.remove('esport') : ulList.classList.add('game')
         !ulList.classList.contains('esport') ? ulList.classList.add('game') : ulList
     }
+}
+
+
+menuHambu.addEventListener('click',  showModal)
+
+function showModal(){
 }
