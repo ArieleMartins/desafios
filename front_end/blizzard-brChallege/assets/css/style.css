@@ -18,6 +18,7 @@
 body{
     font-family: var(--font-family);
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 .container{
@@ -31,6 +32,7 @@ main{
     background-size:cover;
     background-repeat: no-repeat;
     width: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -504,12 +506,20 @@ main::before{
     flex-wrap: wrap;
     justify-content: center;
     color: white;
+    margin-bottom: 100px;
 }
 .container section .container-image-game .game-image{
     width: 100%;
     height: 100%;
-    transition: all .3s linear;
+    transition: all .2s linear;
     filter: brightness(0.8);
+}
+
+.container section div span{
+    font-style: normal;
+    font-weight: 400;
+    color: #E5E5E5;
+    font-size: 0.9rem;
 }
 
 .container section .container-image-game .bg-hover{
@@ -549,7 +559,76 @@ main::before{
     row-gap: 20px;
 }
 
-@media(max-width:1203px){
+
+footer{
+    width: 100%;
+    background-image: url(../images/footer-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 780px;
+    color: white;
+}
+
+.container-img-footer .app{
+    display: flex;
+    position: absolute;
+    right: -150px;
+    width: 100%;
+    max-width: 1050px;
+    
+}
+
+.container-img-footer .app-mini{
+    position: absolute;
+    right: -280px;
+    bottom: 0px;
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.container-footer h2{
+    font-size: 1.6rem;
+    width: 200px;
+}
+.container-footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.container-footer ul li a{
+    text-decoration: none;
+    color: #828792;
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+}
+
+.container-footer button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 32px;
+    column-gap: 8px;
+    width: 266px;
+    height: 52px;
+    background: #00AEFF;
+    border-radius: 4px;
+    border: 0;
+}
+
+@media(max-width:1224px){
+    main{
+        height: 100%;
+    }
      .padding{
         justify-content: inherit;
         column-gap: 0px;
@@ -566,7 +645,7 @@ main::before{
         
     }
     html{
-        font-size: 70%;
+        font-size: 80%;
     }
     .container-trailer{
         display: flex;
@@ -592,6 +671,12 @@ main::before{
         position: relative;
     }
 
+    .games-title{
+        display: none;
+    }
+
+    
+
 }
 
 
@@ -606,7 +691,7 @@ main::before{
 
 @media(max-width:725px){
     html{
-        font-size: 60%;
+        font-size: 70%;
     }
     .container-logo-trailer{
         display: none;
@@ -641,6 +726,13 @@ main::before{
         max-width: 120px;
     }
 
+    
+}
+
+@media(max-width: 530px){
+    .container header ul{
+        display: none;
+    }
 }
 
 
