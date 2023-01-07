@@ -221,7 +221,7 @@ main::before{
 }
 
 .list.esport li{
-    width: 210px;
+    width: 195px;
 }
 
 .list.esport{
@@ -233,7 +233,7 @@ main::before{
 }
 
 .list.esport li img{
-    max-width: 170px;
+    max-width: 150px;
     transition: all 0.5s linear;
 }
 
