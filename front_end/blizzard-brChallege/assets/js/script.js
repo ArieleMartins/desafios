@@ -1,12 +1,13 @@
 import { showMenu } from "./menu.js"
 import { selectGame } from "./main.js"
 import { api } from "./api.js"
+import { modalLogin, showMenuMobile } from "./modal.js"
 
 const menuGames = document.getElementById('menuGames')
 const menuEsports = document.getElementById('menuEsports')
+const menuMobile = document.querySelector('.menu-hambu')
 const list = document.querySelector(".list-games")
-const modal = document.querySelector('.container-modal')
-const btnLogin = document.querySelector('.login')
+const btnLogin = document.getElementById('login')
 const close = document.querySelector('.close')
 
 menuGames.addEventListener('click', () =>{ showMenu(false) })
@@ -84,14 +85,8 @@ function checkSystemAddButton(){
     }
 }
 
-btnLogin.addEventListener('click', () =>{modalLogin(true)})
+btnLogin.addEventListener('click', () =>{ modalLogin(true) })
 
 close.addEventListener('click', () =>{ modalLogin(false) })
-function modalLogin(show){
-    if(show){
-        modal.style.display = 'flex'
-    }else{
-        modal.style.display = 'none'
-    }   
-    
-}
+
+menuMobile.addEventListener('click', () => { showMenuMobile() })

@@ -1,0 +1,133 @@
+footer{
+    width: 100%;
+    background-image: url(../images/footer-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 780px;
+    color: white;
+}
+
+.container-img-footer{
+    overflow-x: hidden;
+}
+
+.container-img-footer .app{
+    display: flex;
+    position: absolute;
+    right: -150px;
+    width: 100%;
+    max-width: 1050px;
+    
+}
+
+.container-img-footer .app-mini{
+    position: absolute;
+    right: -280px;
+    bottom: 0px;
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+.container-footer h2{
+    font-size: 1.6rem;
+    width: 200px;
+}
+.container-footer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.container-footer ul li a{
+    text-decoration: none;
+    color: #828792;
+    display: flex;
+    column-gap: 12px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.container-footer button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+    font-family: var(--font-family);
+    padding: 14px 32px;
+    column-gap: 20px;
+    height: 52px;
+    background: #00AEFF;
+    border-radius: 4px;
+    border: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.container-footer button:hover{
+    background-color:#60cdff;
+}
+
+.container-app-mobile img{
+    max-width: 20px;
+}
+.container-app-mobile{
+    display: flex;
+    column-gap: 20px;
+}
+
+.app-mobile{
+    text-decoration: underline;
+}
+
+
+@media(max-width: 1120px){
+
+    .container-img-footer .app{
+        right: -400px;
+        bottom: 0;
+        width: 980px;
+        
+    }
+    
+    .container-img-footer .app-mini{
+        right: -500px;
+        bottom: 0px;
+        width: 100%;
+        max-width: 780px;
+    }
+   
+}
+
+@media(max-width:725px){
+    footer{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .container-img-footer{
+        width: 100%;
+        height: 700px;
+        position: relative;
+    }
+
+    .container-img-footer .app{
+        right: -30px;
+        bottom: 0;
+        max-width: 400px;
+    }
+
+    .container-img-footer .app-mini{
+        right: -40px;
+        bottom: 0px;
+        width: 100%;
+        max-width: 350px;
+    }
+}

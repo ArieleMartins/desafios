@@ -1,0 +1,138 @@
+.header{
+    border-bottom: 1px solid #ffffff34;
+    position: relative;
+    transition: all 1s linear;
+    position: relative;
+    z-index: 1;
+}
+
+.header img{
+    max-width: 98px;
+}
+
+.header::before{
+    content: '';
+    width: 43px;
+    height: 2.5px;
+    background-color:#00AEFF;
+    position: absolute;
+    bottom: -1.5px;
+    left: 100px;
+}
+
+.header .space-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 19px;
+}
+
+.header .container .links .menus li:hover{
+    background-color: rgba(255, 255, 255, 0.13);
+}
+
+.header .container .links .menus{
+    column-gap: 15px;
+}
+
+.header .container .links .menus li{
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    transition: all .4s ease;
+}
+
+.header .container ul{
+    list-style: none;
+    display: flex;
+    column-gap: 8vh;
+    color: white;
+}
+
+.header .container ul li i{
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.header .container ul li{
+    display: flex;
+    column-gap: 15px;
+    align-items:center;
+    cursor: pointer;
+}
+
+.menu-hambu{
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.678);
+    display: none;
+    cursor: pointer;
+}
+
+.links{
+    display: flex;
+    column-gap: 100px;
+}
+
+.container-btns{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.create{
+    padding: 10px 16px;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    font-family: var(--font-family);
+    transition: all 1s linear;
+    cursor: pointer;
+}
+
+.login{
+    padding: 10px 25px;
+    color: white;
+    font-family: var(--font-family);
+    background: #00AEFF;
+    border-radius: 3.15385px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+.create:hover{
+    background-color: white;
+    color: black;
+}
+
+.login:hover, .container-title-link a:hover{
+    background: #60cdff;
+}
+
+
+@media(max-width: 1120px){
+    .header .links .menus{
+        display: none;
+    }
+    .menu-hambu{
+        display: block;
+    }
+}
+
+@media(max-width:725px){ 
+    .header .container-btns button{
+        display: none;
+    }
+    .header img{
+        max-width: 65px;
+    }
+    .header::before{
+        left: 35px;
+    }
+    .header .space-items{
+        padding: 10px;
+    }
+}
