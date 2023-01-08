@@ -84,9 +84,9 @@ function addEventsButtonsMenu(active, menu){
     active  ? active = menuEsportsActive = !menuEsportsActive : active = menuGameActive = !menuGameActive
 
     if(active){
-        menu.style.height = '100%'
+        menu.parentElement.style.height = '100%'
     }else{
-        menu.style.height = '50px'
+        menu.parentElement.style.height = '50px'
     }
 }
 
@@ -103,14 +103,14 @@ function createAddElements(showBtns){
 
     divMenus.innerHTML = `
         <ul class="menu-mobile">
-            <li id="menu-games-mobile">
-                <span>Jogos <i class="fa-solid fa-chevron-down"></i></span>
+            <li class="menu-games-mobile">
+                <span id="menu-games-mobile">Jogos <i class="fa-solid fa-chevron-down"></i></span>
                 <ul>
                     ${ showListMenu(true) }
                 </ul>
             </li>
-            <li id="menu-esports-mobile">
-                <span>Esportes <i class="fa-solid fa-chevron-down"></i></span>
+            <li class="menu-esports-mobile">
+                <span id="menu-esports-mobile">Esportes <i class="fa-solid fa-chevron-down"></i></span>
                 <ul>
                     ${ showListMenu(false) }
                 </ul>

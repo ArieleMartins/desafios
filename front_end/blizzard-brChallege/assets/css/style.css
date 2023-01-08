@@ -235,16 +235,20 @@ form{
     justify-content: center;
 }
 
-#menu-games-mobile, #menu-esports-mobile{
+.menu-games-mobile, .menu-esports-mobile{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    height: 50px;
     overflow-y: hidden;
     overflow-x: hidden;
+    height: 50px;
 }
 
-#menu-games-mobile ul, #menu-esports-mobile ul{
+.menu-games-mobile span, .menu-esports-mobile span{
+    padding: 2px;
+}
+
+.menu-games-mobile ul, .menu-esports-mobile ul{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -253,19 +257,19 @@ form{
    
 }
 
-#menu-games-mobile ul li, #menu-esports-mobile ul li{
+.menu-games-mobile ul li, .menu-esports-mobile ul li{
     display: flex;
     column-gap: 20px;
     align-items: center;
     font-size: 1.1rem;
 }
 
-#menu-games-mobile ul li img{
+.menu-games-mobile ul li img{
     width: 100%;
     max-width: 40px;
 }
 
-#menu-esports-mobile ul li img{
+.menu-esports-mobile ul li img{
   width: 100%;
   max-width: 70px;
 }
