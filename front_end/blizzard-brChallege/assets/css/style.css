@@ -26,6 +26,16 @@ body{
     margin: auto;
 }
 
+main::before{
+    content: '';
+    width: 20%;
+    height: 4px;
+    background-color: #00AEFF;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.5s linear;
+}
+
 
 /* Modal */
 
@@ -317,7 +327,11 @@ form{
     background-color:#00AEFF;
 }
 
-
+@media(max-width:1224px){
+    html{
+        font-size: 80%;
+    }
+}
 
 
 @media(max-width: 1120px){

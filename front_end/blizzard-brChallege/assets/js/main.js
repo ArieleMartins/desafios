@@ -94,7 +94,8 @@ function gameSelected(game){
         trailer.addEventListener('mouseover', ()=>{
             trailer.style.backgroundImage = `url(assets/images/banner-hero/games/${game.gifTrailer})`
         })
-        document.styleSheets[1].cssRules[7].style.width = game.bar
+        document.styleSheets[1].cssRules[6].style.width = game.bar
+        
         imgTrailer.setAttribute("src", `assets/images/banner-hero/games/${game.imgTrailer}`)
         logo.setAttribute('src', `assets/images/banner-hero/games/${game.logo}`)
     }
